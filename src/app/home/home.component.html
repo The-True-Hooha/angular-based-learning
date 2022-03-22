@@ -5,6 +5,7 @@
     <mat-select
     panelClass="sort-select"
     [(ngModel)]="sort"
+    (selectionChange)="searchMovies(sort)"
     >
       <mat-option value="name"> Name </mat-option>
       <mat-option value="released"> Released </mat-option>
@@ -19,7 +20,7 @@
 
   <div class="movies">
     <ng-container *ngFor="let movie of movies">
-      <div class="movie">
+      <div class="movie" (click)="openMovieDetails(movie.id)">
         <div class="movies thumb container">
           <img
           *ngIf="movie.background_image"

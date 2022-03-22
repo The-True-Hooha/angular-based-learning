@@ -1,0 +1,39 @@
+<div class="details">
+  <div class="movie-banner">
+    <img
+    class="movie-banner-img"
+    src=""
+    alt="background image">
+  </div>
+  <div class="movie-content">
+    <div class="details-wrapper">
+      <div class="movie-header">
+        <h1 class="movie-header-title"> Movie Name </h1>
+        <h2 class="movie-header-release-date"> movie release date</h2>
+        <p class="movie-header-genres"></p>
+        <div class="movie-gauge">
+          <mwl-gauge
+          class="two"
+          [max]="100"
+          [dialStartAngle]="180"
+          [dialEndAngle]="0"
+          [value]="movieRating"
+          [animated]="true"
+          [color]="getColor"
+          >
+        </mwl-gauge>
+        <a class="movie-gauge-label"
+        target="_blank"
+        href=""
+        > Critic
+        </a>
+        </div>
+        <span> Romance </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--
+  add image source for movie banner
+--->

@@ -1,5 +1,6 @@
 export interface Movie {
   background_image: string;
+  id: string;
   name: string;
   released: string;
   critics_url: string;
