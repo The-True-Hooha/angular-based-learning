@@ -1,0 +1,49 @@
+<!--- div with class of filters that allocates the amount of movies that is displayed on the homepage--->
+<div class="filters">
+  <mat-form-field>
+    <mat-label> Sort by </mat-label>
+    <mat-select
+    panelClass="sort-select"
+    [(ngModel)]="sort"
+    >
+      <mat-option value="name"> Name </mat-option>
+      <mat-option value="released"> Released </mat-option>
+      <mat-option value="added"> Added </mat-option>
+      <mat-option value="created"> Created </mat-option>
+      <mat-option value="updated"> Updated </mat-option>
+      <mat-option value="rating"> Rating </mat-option>
+      <mat-option value="critics"> Critics </mat-option>
+    </mat-select>
+  </mat-form-field>
+  </div>
+
+  <div class="movies">
+    <ng-container *ngFor="let movie of movies">
+      <div class="movie">
+        <div class="movies thumb container">
+          <img
+          *ngIf="movie.background_image"
+          src="{{movie.background_image}}"
+          alt="thumbnail"
+          class="movie-thumbnail"
+          />
+          <p *ngIf="!movie.background_image"> no image </p>
+      </div>
+      <div class="movie-description">
+        <p class="movie-name"> {{movie.name}}</p>
+        <div class="movie-platforms">
+          <img
+          *ngFor="let moviePlatform of movie.parent_platform"
+          class="movie-platform"
+                src=""
+                alt="slug"
+          />
+        </div>
+        </div>
+      </div>
+  </ng-container>
+</div>
+<!-- remember to add svg images in folder directory
+  src="assets/images/platforms/{{moviePlatform.platform.slug}}.svg"
+  alt= "{{moviePlatform.platform.slug}}"
+-->

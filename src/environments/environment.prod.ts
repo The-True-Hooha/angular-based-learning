@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  MOVIE_API_URL: '' //include the link from the movie api
 };
